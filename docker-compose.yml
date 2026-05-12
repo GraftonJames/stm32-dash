@@ -1,0 +1,13 @@
+services:
+  stm32-toolchain:
+    build: .
+    image: stm32-dev
+    volumes:
+      - .:/home/dev/project
+    privileged: true
+    devices:
+      - "/dev/bus/usb:/dev/bus/usb"
+    ports:
+      - "3333:3333"
+    tty: true
+    stdin_open: true
